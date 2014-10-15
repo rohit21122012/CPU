@@ -22,13 +22,17 @@ module finalStimuli;
 	initial
 	begin
 			$display("-------------------------------------------------------------------------------------------------------------------------");
-			$display("Addition");
+			$display("UAddition");
 	    	A=32'd62; B=32'd15; A_or_L = 0; S_or_U = 0; OpCode = 2'b00;	//ALU : Unsigned : Addition'
 			
-			
 	#1 		$display("-------------------------------------------------------------------------------------------------------------------------");
-			$display("Division");  
+			$display("UMultiplication");  
+			A=32'd5; B=32'd3; A_or_L = 0; S_or_U = 0; OpCode = 2'b10;	//ALU : Unsigned : Multiplication'
+
+	#1 		$display("-------------------------------------------------------------------------------------------------------------------------");
+			$display("UDivision");  
 			A=32'd61; B=32'd11; A_or_L = 0; S_or_U = 0; OpCode = 2'b11;	//ALU : Unsigned : Division'
+
 	//#2    	A=32'd6265; B=312'd15; A_or_L = 0; S_or_U = 0; OpCode = 2'b00;	//ALU : Unsigned : Addition'
 
 	end
