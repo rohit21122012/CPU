@@ -1,0 +1,2 @@
+iverilog -o div basiccell.v fa.v laststep32.v mux2to1.v dividestimuli.v stepof32.v  div32.v 
+vvp div
