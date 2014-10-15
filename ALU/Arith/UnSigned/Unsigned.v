@@ -12,9 +12,11 @@ module UnSigned(output [31:0] Answer, input [31:0] A,input [31:0] B,input [1:0] 
 	output [31:0] Quotient;
 	output [31:0] Remainder;
 
+	wire carry_out;
+	wire overflow;
 
 	UDivider myDiv(Quotient, Remainder, A, B);
-	UDivider myDiv2(Sum, Remainder, A, B);
+	UAdder myAdder(Sum, carry_out, overflow, A, B ,0);
 	UDivider myDiv3(Difference, Remainder, A, B);
 	//UDivider myDiv(Quotient, Remainder, A, B);
 

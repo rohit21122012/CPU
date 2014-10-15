@@ -16,19 +16,19 @@ module finalStimuli;
 
 	initial
 	begin
-		//$display("000-Unsigned Adder\n001-Signed Adder\n010-Unsigned Subtracter\n011-Signed Subtracter\n100-Unsigned Multiplicator\n101-Signed Multiplication\n110-UnSigned Division\n111-Signed Division");
 		$monitor($time, "\tOPERATOR1: (%d)\t OPERATOR2: (%d) C: (%d)\t\t\tAnswer: (%d)",A,B,OpCode,answer);
 	end
 
 	initial
 	begin
-		
-			$display("Division");
+			$display("-------------------------------------------------------------------------------------------------------------------------");
+			$display("Addition");
 	    	A=32'd62; B=32'd15; A_or_L = 0; S_or_U = 0; OpCode = 2'b00;	//ALU : Unsigned : Addition'
 			
-	
-	#1 		$display("Addition");  
-			A=32'd61; B=32'd11; A_or_L = 0; S_or_U = 0; OpCode = 2'b00;	//ALU : Unsigned : Addition'
+			
+	#1 		$display("-------------------------------------------------------------------------------------------------------------------------");
+			$display("Division");  
+			A=32'd61; B=32'd11; A_or_L = 0; S_or_U = 0; OpCode = 2'b11;	//ALU : Unsigned : Division'
 	//#2    	A=32'd6265; B=312'd15; A_or_L = 0; S_or_U = 0; OpCode = 2'b00;	//ALU : Unsigned : Addition'
 
 	end
