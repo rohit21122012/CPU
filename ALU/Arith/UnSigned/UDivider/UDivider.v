@@ -1,10 +1,9 @@
 //b12015 ROHIT PATIYAL
 
-`include "fulladd.v"
-`include "BasicCell.v"	
-`include "stepof32.v"
-`include "mux2to1.v"
-`include "laststepof32.v"		//`
+`include "ALU/Arith/UnSigned/UDivider/fulladd.v"
+`include "ALU/Arith/UnSigned/UDivider/BasicCell.v"	
+`include "ALU/Arith/UnSigned/UDivider/stepof32.v"
+`include "ALU/Arith/UnSigned/UDivider/laststepof32.v"		//`
 
 module UDivider(Quotient, Remainder, Dividend, Divisor);
 	

@@ -1,11 +1,10 @@
 //b12015 Rohit Patiyal
-`#include "UDivider/UDivider.v"
-`#include "UAdder/UAdder.v"
+`include "ALU/Arith/UnSigned/UDivider/UDivider.v"
+`include "ALU/Arith/UnSigned/UAdder/UAdder.v"
 
-module UnSigned(output [31:0] AnswerOne,output [31:0] AnswerTwo,input [31:0] A,input [31:0] B,input [1:0] OpCode);
-	
-	input [31:0] A; //Dividend ;
-	input [31:0] B; //Divisor;
+
+module UnSigned(output [31:0] Answer, input [31:0] A,input [31:0] B,input [1:0] OpCode);
+
 
 	output [31:0] Sum;
 	output [31:0] Difference;
@@ -15,14 +14,14 @@ module UnSigned(output [31:0] AnswerOne,output [31:0] AnswerTwo,input [31:0] A,i
 
 
 	UDivider myDiv(Quotient, Remainder, A, B);
+	UDivider myDiv2(Sum, Remainder, A, B);
+	UDivider myDiv3(Difference, Remainder, A, B);
+	//UDivider myDiv(Quotient, Remainder, A, B);
 
 	generate for(i=0;i<32;i=i+1) begin: muxingthebits
-		mux4to1(AnswerOne[i], Sum, Quotient, Difference, Product[31:0], OpCode)
+		mux4to1 m(Answer[i], Sum[i], Quotient[i], Difference[i], Quotient[i], OpCode);
 	end endgenerate
-	
-	generate for(i=0;i<32;i=i+1) begin: muxingthebits
-		mux4to1(AnswerOne[i], 0, Remainder, 0, Product[63:32]);
-	end endgenerate
+
 
 
 endmodule
