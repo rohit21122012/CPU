@@ -21,6 +21,7 @@ module UnSigned(output [31:0] Answer, input [31:0] A,input [31:0] B,input [1:0] 
 	UMultiplier myProduct(Product, A, B);
 	//UDivider myDiv(Quotient, Remainder, A, B);
 
+	genvar i;
 	generate for(i=0;i<32;i=i+1) begin: muxingthebits
 		mux4to1 m(Answer[i], Sum[i], Difference[i], Product[i], Quotient[i], OpCode);
 	end endgenerate
