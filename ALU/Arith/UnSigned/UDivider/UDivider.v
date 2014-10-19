@@ -3,7 +3,8 @@
 
 `include "ALU/Arith/UnSigned/UDivider/BasicCell.v"	
 `include "ALU/Arith/UnSigned/UDivider/stepof32.v"
-`include "ALU/Arith/UnSigned/UDivider/laststepof32.v"		//`
+`include "ALU/Arith/UnSigned/UDivider/laststepof32.v"
+//`include "ALU/mux2to1.v"		//`
 
 module UDivider(Quotient, Remainder, Dividend, Divisor);
 	

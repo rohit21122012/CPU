@@ -1,7 +1,8 @@
 //b12015 Rohit Patiyal
 `include "ALU/Arith/UnSigned/UDivider/UDivider.v"
 `include "ALU/Arith/UnSigned/UAdder/UAdder.v"
-`include "ALU/Arith/UnSigned/UMultiplier/UMultiplier.v" //`
+`include "ALU/Arith/UnSigned/UMultiplier/UMultiplier.v"
+ //`
 
 module UnSigned(output [31:0] Answer, input [31:0] A,input [31:0] B,input [1:0] OpCode);
 

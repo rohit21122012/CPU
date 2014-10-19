@@ -1,7 +1,8 @@
 //b12015 Rohit Patiyal
-//`include "ALU/Arith/Signed/SDivider/SDivider.v"
+`include "ALU/Arith/Signed/SDivider/SDivider.v"
 //`include "ALU/Arith/Signed/SAdder/SAdder.v"
-`include "ALU/Arith/Signed/SMultiplier/SMultiplier.v" //`
+`include "ALU/Arith/Signed/SMultiplier/SMultiplier.v" 
+//`include "ALU/mux4to1.v"//`
 
 module Signed(output [31:0] Answer, input [31:0] A,input [31:0] B,input [1:0] OpCode);
 
@@ -19,10 +20,10 @@ module Signed(output [31:0] Answer, input [31:0] A,input [31:0] B,input [1:0] Op
 //	SAdder myAdder(Sum, carry_out, overflow, A, B ,0);
 //	SDivider myDiv3(Difference, Remainder, A, B);
 	SMultiplier myProduct(Product, A, B);
-	//SDivider myDiv(Quotient, Remainder, A, B);
+	SDivider myDiv(Quotient, Remainder, A, B);
 	genvar i;
 	generate for(i=0;i<32;i=i+1) begin: muxingthebits
-		mux4to1 m(Answer[i], Product[i], Product[i], Product[i], Product[i], OpCode);
+		mux4to1 m(Answer[i], Product[i], Product[i], Product[i], Quotient[i], OpCode);
 	end endgenerate
 
 
